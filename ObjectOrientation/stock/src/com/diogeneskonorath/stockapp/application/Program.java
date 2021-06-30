@@ -7,21 +7,25 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner data = new Scanner(System.in);
-        Stock stock = new Stock();
+        String name;
+        double price;
+        int quantity;
 
         System.out.printf("Enter product data: \n");
         System.out.printf("Product name: ");
-        stock.productName = data.nextLine();
+        name = data.nextLine();
         System.out.print("Product price: ");
-        stock.productPrice = data.nextDouble();
+        price = data.nextDouble();
         System.out.print("Quantity in stock: ");
-        stock.productQuantity = data.nextInt();
+        quantity = data.nextInt();
+
+        Stock stock = new Stock(name, quantity, price);
 
         System.out.print("\n");
         System.out.print(stock);
 
         System.out.print("\nEnter the number of products to be added in stock: ");
-        int quantity = data.nextInt();
+        quantity = data.nextInt();
         stock.addProductsInStock(quantity);
 
         System.out.print("");
